@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URI = 'mongodb://eyuelcherenet245_db_user:MdtNtOfZ1RXKHMdi@ac-udefxcl-shard-00-00.tnztwrs.mongodb.net:27017,ac-udefxcl-shard-00-01.tnztwrs.mongodb.net:27017,ac-udefxcl-shard-00-02.tnztwrs.mongodb.net:27017/gulitX?ssl=true&replicaSet=atlas-yqsg9m-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0';
 
 const groceryItems = [
   {
