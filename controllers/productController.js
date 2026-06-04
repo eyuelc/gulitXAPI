@@ -1,6 +1,6 @@
 import Product from '../models/Product.js';
 
-// GET /products?name=...&category=...
+
 export const getProducts = async (req, res, next) => {
   try {
     const { name, category } = req.query;
@@ -20,7 +20,6 @@ export const getProducts = async (req, res, next) => {
   }
 };
 
-// POST /products
 export const newProducts = async (req, res, next) => {
   try {
     const { name, price, hasDiscount, discountPrice, marketplaceName, category, mainCategory, subCategory, image, inStock, unit, rating, distanceKm } = req.body;
@@ -31,7 +30,6 @@ export const newProducts = async (req, res, next) => {
       throw error;
     }
 
-    // Auto-generate id by finding max existing id + 1 (optional)
     const lastProduct = await Product.findOne().sort({ id: -1 });
     const newId = lastProduct ? lastProduct.id + 1 : 1;
 
@@ -59,7 +57,6 @@ export const newProducts = async (req, res, next) => {
   }
 };
 
-// GET /products/:id
 export const getProductById = async (req, res, next) => {
   try {
     const id = parseInt(req.params.id);
@@ -77,7 +74,6 @@ export const getProductById = async (req, res, next) => {
   }
 };
 
-// PUT /products/:id
 export const updateProduct = async (req, res, next) => {
   try {
     const id = parseInt(req.params.id);
@@ -97,7 +93,6 @@ export const updateProduct = async (req, res, next) => {
   }
 };
 
-// DELETE /products/:id
 export const deleteProduct = async (req, res, next) => {
   try {
     const id = parseInt(req.params.id);
